@@ -1,8 +1,6 @@
 # React Code Split Component
 > painless Code Splitting Component
 
-**beware! This repo is purely experimental**
-
 ## Motivation 💪
 *TODO some motivations for code splitting here*
 
@@ -17,8 +15,13 @@ yarn add react-code-split-component
 ```
 
 ## Usage 🔧
+There are currently two supported code splitting strategy, the first one being using ``<LazyComponent />`` higher order component and send a ``load()`` props containing a require/import to a component. The second one is to wrap the component to be lazy loaded using ``lazify()`` HOC Wrapper method.
 
-### Importing Components
+Below are the provided usages of each strategy.
+
+### LazyComponent
+
+#### Importing Components
 **Usual ES6 Component Import**
 ```javascript
 import MyAwesomeComponent from './path/to/MyAwesomeComponent';
@@ -59,19 +62,66 @@ var LazyComponent = require('react-code-split-component').default;
 export default () => (
   <div>
     ...
-    <LazyComponent load={() => require('./path/to/MyAwesomeComponent')} />
+    <LazyComponent load=̨{() => require('./path/to/MyAwesomeComponent')} />
   </div>
 );
 ```
 
-### Sending Props to Code Splitting Component
+#### Sending Props to Code Splitting Component
+``<LazyComponent />`` supports props sending to a component to be lazily loaded.
 
-**NOT YET SUPPORTED!**
+```javascript
+import LazyComponent from 'react-code-split-component';
+
+export default () => (
+  <div>
+    ...
+    <LazyComponent
+      load={() => import('./path/to/MyAwesomeComponent')}
+      myPropsNameOne={...}
+      myPropsNameTwo={...}
+    />
+  </div>
+);
+```
+
+### Wrap Component with ``lazify`` method
+
+#### Wrapping a Stateless Component
+```javascript
+import React from 'react';
+import { lazify } from 'react-code-split-component';
+
+const myStatelessComponent = () => (
+  <div>
+    ...
+  </div>
+)
+export default lazify(myStatelessComponent);
+```
+
+#### Wrapping a Stateful Container
+```javascript
+import React from 'react';
+import { lazify } from 'react-code-split-component';
+
+class myStatefulContainer extends React.Component {
+  ...
+  render() {
+    return (
+      <div>
+        ...
+      </div>
+    );
+  }
+}
+
+export default lazify(myStatefulContainer);
+```
 
 ## ESLint Issues ⚠️
-
-*TODO*
+ESLint might shows warning when you're using ``import`` inside another react component if you use ``<LazyComponent />``.
 
 ## SSR Support 🔬
 
-**NOT YET SUPPORTED!**
+**Server Side Rendering currently not supported**
