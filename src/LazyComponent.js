@@ -4,22 +4,23 @@ class LazyComponent extends React.Component {
   constructor() {
     super();
     this.state = {
-      Comp: null,
+      LazyComponent: null,
     };
   }
 
   componentDidMount() {
     this.props.load().then((Comp) => {
-      const TheComp = Comp.default;
+      const LoadedComponent = Comp.default;
       this.setState({
-        Comp: (<TheComp />),
+        LazyComponent: (<LoadedComponent {...this.props} />),
       });
     });
   }
 
   render() {
+    const { LazyComponent } = this.state;
     return (
-      <div>{ this.state.Comp }</div>
+      <div>{ LazyComponent }</div>
     );
   }
 }
