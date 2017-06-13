@@ -2009,7 +2009,7 @@ var LazyComponent = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (LazyComponent.__proto__ || Object.getPrototypeOf(LazyComponent)).call(this));
 
     _this.state = {
-      Comp: null
+      LazyComponent: null
     };
     return _this;
   }
@@ -2020,19 +2020,21 @@ var LazyComponent = function (_React$Component) {
       var _this2 = this;
 
       this.props.load().then(function (Comp) {
-        var TheComp = Comp.default;
+        var LoadedComponent = Comp.default;
         _this2.setState({
-          Comp: _react2.default.createElement(TheComp, null)
+          LazyComponent: _react2.default.createElement(LoadedComponent, _this2.props)
         });
       });
     }
   }, {
     key: 'render',
     value: function render() {
+      var LazyComponent = this.state.LazyComponent;
+
       return _react2.default.createElement(
         'div',
         null,
-        this.state.Comp
+        LazyComponent
       );
     }
   }]);
@@ -2052,6 +2054,7 @@ exports.default = LazyComponent;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.LazyComponent = undefined;
 
 var _LazyComponent = __webpack_require__(18);
 
@@ -2059,7 +2062,7 @@ var _LazyComponent2 = _interopRequireDefault(_LazyComponent);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = _LazyComponent2.default;
+exports.LazyComponent = _LazyComponent2.default;
 
 /***/ }),
 /* 20 */
