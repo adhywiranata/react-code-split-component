@@ -1,2 +1,4 @@
 import LazyComponent from './LazyComponent';
-export { LazyComponent };
+import lazify from './lazify';
+
+export { LazyComponent, lazify };
