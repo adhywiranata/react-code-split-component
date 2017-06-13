@@ -17,6 +17,8 @@ yarn add react-code-split-component
 ```
 
 ## Usage 🔧
+
+### Importing Components
 **Usual ES6 Component Import**
 ```javascript
 import MyAwesomeComponent from './path/to/MyAwesomeComponent';
@@ -62,10 +64,14 @@ export default () => (
 );
 ```
 
+### Sending Props to Code Splitting Component
+
+**NOT YET SUPPORTED!**
+
 ## ESLint Issues ⚠️
 
 *TODO*
 
 ## SSR Support 🔬
 
-**Not Yet Supported**
+**NOT YET SUPPORTED!**
