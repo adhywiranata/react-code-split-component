@@ -1,0 +1,5 @@
+.storybook
+node_modules
+stories
+src/DummyComponent
+src/index
