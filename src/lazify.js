@@ -10,12 +10,8 @@ export default (ComponentToBeLazyLoaded) => {
     }
 
     componentDidMount() {
-      console.log(ComponentToBeLazyLoaded);
-      this.props.load().then((Comp) => {
-        const LoadedComponent = Comp.default;
-        this.setState({
-          LazyComponent: (<ComponentToBeLazyLoaded {...this.props} />),
-        });
+      this.setState({
+        LazyComponent: (<ComponentToBeLazyLoaded />),
       });
     }
 

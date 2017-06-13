@@ -2097,14 +2097,8 @@ exports.default = function (ComponentToBeLazyLoaded) {
     _createClass(LazyComponent, [{
       key: 'componentDidMount',
       value: function componentDidMount() {
-        var _this2 = this;
-
-        console.log(ComponentToBeLazyLoaded);
-        this.props.load().then(function (Comp) {
-          var LoadedComponent = Comp.default;
-          _this2.setState({
-            LazyComponent: _react2.default.createElement(ComponentToBeLazyLoaded, _this2.props)
-          });
+        this.setState({
+          LazyComponent: _react2.default.createElement(ComponentToBeLazyLoaded, null)
         });
       }
     }, {
