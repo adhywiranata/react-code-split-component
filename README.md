@@ -99,6 +99,12 @@ export default () => (
 ## ESLint Issues ⚠️
 ESLint might shows warning when you're using ``import`` inside another react component if you use ``<LazyComponent />``.
 
+## EcmaScript Dynamic Import 🎵
+
+**not yet supported**
+
+Dynamic Import is currently in TC39 Proposal. When dynamic imports is officially supported, I'm sure to update this module to take advantage of the awesomeness of dynamic imports.
+
 ## SSR Support 🔬
 
 **Server Side Rendering currently not supported**
