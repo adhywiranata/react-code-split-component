@@ -3,11 +3,12 @@ import {shallow, mount} from 'enzyme';
 import jsdom from 'jsdom';
 
 import LazyComponent from './LazyComponent';
-import DummyComponent from './DummyComponent';
 
 const doc = new jsdom.JSDOM('<!doctype html><html><body></body></html>');
 global.document = doc;
 global.window = doc.defaultView;
+
+const DummyComponent = () => (<div></div>);
 
 describe('<LazyComponent />', () => {
   it('renders normally', () => {
@@ -27,10 +28,10 @@ describe('<LazyComponent />', () => {
   it('have props called load as a promise', (done) => {
     const mockPromise = new Promise((resolve, reject) => {
       setTimeout(() => {
-        if (typeof DummyComponent === 'function') {
-          resolve(DummyComponent.default);
+        if (typeof <DummyComponent /> === 'object') {
+          resolve(<DummyComponent />);
         } else {
-          reject(DummyComponent.default);
+          reject();
         }
       }, 1);
     });
