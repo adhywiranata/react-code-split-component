@@ -46,7 +46,7 @@ module.exports = () => (
 ```
 **Using React Code Split Component with ES6 import**
 ```javascript
-import LazyComponent from 'react-code-split-component';
+import { LazyComponent } from 'react-code-split-component';
 
 export default () => (
   <div>
@@ -57,7 +57,7 @@ export default () => (
 ```
 **Using React Code Split Component with ES5 require**
 ```javascript
-var LazyComponent = require('react-code-split-component').default;
+var LazyComponent = require('react-code-split-component').LazyComponent.default;
 
 export default () => (
   <div>
@@ -71,7 +71,7 @@ export default () => (
 ``<LazyComponent />`` supports props sending to a component to be lazily loaded.
 
 ```javascript
-import LazyComponent from 'react-code-split-component';
+import { LazyComponent } from 'react-code-split-component';
 
 export default () => (
   <div>
@@ -86,6 +86,8 @@ export default () => (
 ```
 
 ### Wrap Component with ``lazify`` method
+
+> ⚠️ ``lazify`` method is currently experimental, you may find problems with passing props, and imported modules on the lazified component still gets imported.
 
 #### Wrapping a Stateless Component
 ```javascript
