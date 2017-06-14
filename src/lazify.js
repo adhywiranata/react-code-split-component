@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default (ComponentToBeLazyLoaded) => {
+export default (importingComponent, extraProps = {}) => {
   return class LazyComponent extends React.Component {
     constructor() {
       super();
@@ -10,8 +10,11 @@ export default (ComponentToBeLazyLoaded) => {
     }
 
     componentDidMount() {
-      this.setState({
-        LazyComponent: (<ComponentToBeLazyLoaded />),
+      importingComponent.then((Comp) => {
+        const LoadedComponent = Comp.default;
+        this.setState({
+          LazyComponent: (<LoadedComponent {...this.props} {...extraProps} />),
+        });
       });
     }
 
