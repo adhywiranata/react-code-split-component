@@ -33,17 +33,7 @@ export default () => (
   </div>
 );
 ```
-**Usual ES5 Require**
-```javascript
-var MyAwesomeComponent = require('./path/to/MyAwesomeComponent').default;
 
-module.exports = () => (
-  <div>
-    ...
-    <MyAwesomeComponent />
-  </div>
-);
-```
 **Using React Code Split Component with ES6 import**
 ```javascript
 import { LazyComponent } from 'react-code-split-component';
@@ -52,17 +42,6 @@ export default () => (
   <div>
     ...
     <LazyComponent load={() => import('./path/to/MyAwesomeComponent')} />
-  </div>
-);
-```
-**Using React Code Split Component with ES5 require**
-```javascript
-var LazyComponent = require('react-code-split-component').LazyComponent.default;
-
-export default () => (
-  <div>
-    ...
-    <LazyComponent load=̨{() => require('./path/to/MyAwesomeComponent')} />
   </div>
 );
 ```
@@ -85,40 +64,36 @@ export default () => (
 );
 ```
 
-### Wrap Component with ``lazify`` method
+### Wrap Component imports with ``lazify`` method
 
-> ⚠️ ``lazify`` method is currently experimental, you may find problems with passing props, and imported modules on the lazified component still gets imported.
+``
+lazify(componentImportPromise, [extraProps])
+``
 
-#### Wrapping a Stateless Component
+#### Without Props
 ```javascript
 import React from 'react';
 import { lazify } from 'react-code-split-component';
 
-const myStatelessComponent = () => (
+export default () => (
   <div>
     ...
+    { lazify(import('./path/to/MyAwesomeComponent')) }
   </div>
-)
-export default lazify(myStatelessComponent);
+);
 ```
 
-#### Wrapping a Stateful Container
+#### With Extra Props
 ```javascript
 import React from 'react';
 import { lazify } from 'react-code-split-component';
 
-class myStatefulContainer extends React.Component {
-  ...
-  render() {
-    return (
-      <div>
-        ...
-      </div>
-    );
-  }
-}
-
-export default lazify(myStatefulContainer);
+export default () => (
+  <div>
+    ...
+    { lazify(import('./path/to/MyAwesomeComponent'), { myExtraPropKey: 'hi!'}) }
+  </div>
+);
 ```
 
 ## ESLint Issues ⚠️
