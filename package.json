@@ -23,8 +23,12 @@
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.0.1",
     "jest": "^20.0.4",
+    "jsdom": "^11.0.0",
     "react-test-renderer": "^15.5.4",
     "webpack": "^2.6.1"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
   },
   "version": "0.4.0"
 }
