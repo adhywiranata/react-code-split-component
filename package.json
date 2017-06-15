@@ -4,6 +4,9 @@
     "type": "git",
     "url": "https://github.com/adhywiranata/react-code-split-component"
   },
+  "scripts": {
+    "test": "./node_modules/.bin/jest --runInBand --verbose"
+  },
   "dependencies": {
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
