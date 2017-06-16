@@ -5,11 +5,12 @@
 [![dependencies Status](https://david-dm.org/adhywiranata/react-code-split-component/status.png)](https://david-dm.org/adhywiranata/react-code-split-component)
 [![devDependencies Status](https://david-dm.org/adhywiranata/react-code-split-component/dev-status.svg)](https://david-dm.org/adhywiranata/react-code-split-component?type=dev)
 [![Code Climate](https://codeclimate.com/github/adhywiranata/react-code-split-component/badges/gpa.svg)](https://codeclimate.com/github/adhywiranata/react-code-split-component)
-[![Test Coverage](https://codeclimate.com/github/adhywiranata/react-code-split-component/badges/coverage.svg)](https://codeclimate.com/github/adhywiranata/react-code-split-component)
-[![Issue Count](https://codeclimate.com/github/adhywiranata/react-code-split-component/badges/issue_count.svg)](https://codeclimate.com/github/adhywiranata/react-code-split-component)
 
 ## Motivation 💪
-*TODO some motivations for code splitting here*
+
+__Code Splitting?__
+
+Split bundle codes and load module and dependencies on demand. Time to say goodbye to monolithic bundle file! 👋
 
 ## Installation 👷
 **NPM**
