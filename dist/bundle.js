@@ -2030,10 +2030,15 @@ var LazyComponent = function (_React$Component) {
       var _this2 = this;
 
       this.props.load().then(function (Comp) {
-        var LoadedComponent = Comp.default;
-        _this2.setState({
-          LazyComponent: _react2.default.createElement(LoadedComponent, _this2.props)
-        });
+        _this2.updateLazyComponent(Comp);
+      });
+    }
+  }, {
+    key: 'updateLazyComponent',
+    value: function updateLazyComponent(Comp) {
+      var LoadedComponent = Comp.default;
+      this.setState({
+        LazyComponent: _react2.default.createElement(LoadedComponent, this.props)
       });
     }
   }, {
@@ -2104,10 +2109,15 @@ exports.default = function (importingComponent) {
         var _this2 = this;
 
         importingComponent.then(function (Comp) {
-          var LoadedComponent = Comp.default;
-          _this2.setState({
-            LazyComponent: _react2.default.createElement(LoadedComponent, _extends({}, _this2.props, extraProps))
-          });
+          _this2.updateLazyComponent(Comp);
+        });
+      }
+    }, {
+      key: 'updateLazyComponent',
+      value: function updateLazyComponent(Comp) {
+        var LoadedComponent = Comp.default;
+        this.setState({
+          LazyComponent: _react2.default.createElement(LoadedComponent, _extends({}, this.props, extraProps))
         });
       }
     }, {
