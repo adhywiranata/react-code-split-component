@@ -1,5 +1,5 @@
 # React Code Split Component
-> painless Code Splitting Component
+> Painless Code Splitting Component
 
 [![Build Status](https://travis-ci.org/adhywiranata/react-code-split-component.svg?branch=master)](https://travis-ci.org/adhywiranata/react-code-split-component)
 [![dependencies Status](https://david-dm.org/adhywiranata/react-code-split-component/status.png)](https://david-dm.org/adhywiranata/react-code-split-component)
@@ -23,14 +23,18 @@ yarn add react-code-split-component
 ```
 
 ## Usage 🔧
-There are currently two supported code splitting strategy, the first one being using ``<LazyComponent />`` higher order component and send a ``load()`` props containing a require/import to a component. The second one is to wrap the component to be lazy loaded using ``lazify()`` HOC Wrapper method.
+There are currently two supported code splitting strategy, the first one being using ``<LazyComponent />`` higher order component and send a ``load()`` props containing a import to a component.
 
-Below are the provided usages of each strategy.
+The second one is to wrap the component to be lazy loaded using ``lazify()`` HOC Wrapper method.
+
+Below are the provided usages of each strategy:
 
 ### LazyComponent
 
 #### Importing Components
-**Usual ES6 Component Import**
+
+__Usual ES6 Component Import__
+
 ```javascript
 import MyAwesomeComponent from './path/to/MyAwesomeComponent';
 
@@ -42,7 +46,8 @@ export default () => (
 );
 ```
 
-**Using React Code Split Component with ES6 import**
+__Using React Code Split Component with ES6 import__
+
 ```javascript
 import { LazyComponent } from 'react-code-split-component';
 
