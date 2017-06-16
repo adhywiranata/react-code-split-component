@@ -10,6 +10,16 @@ global.window = doc.defaultView;
 
 const DummyComponent = () => (<div></div>);
 
+const mockPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    if (typeof <DummyComponent /> === 'object') {
+      resolve(<DummyComponent />);
+    } else {
+      reject();
+    }
+  }, 1);
+});
+
 describe('<LazyComponent />', () => {
   it('renders normally', () => {
     const wrapper = shallow(
@@ -26,19 +36,20 @@ describe('<LazyComponent />', () => {
   });
 
   it('have props called load as a promise', (done) => {
-    const mockPromise = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        if (typeof <DummyComponent /> === 'object') {
-          resolve(<DummyComponent />);
-        } else {
-          reject();
-        }
-      }, 1);
-    });
     const wrapper = mount(
       <LazyComponent load={() => mockPromise} />
     );
     expect(wrapper.prop('load')).toBeDefined();
+    done();
+  });
+
+  it('successfully calls updateLazyComponent method without breaks', (done) => {
+    const spy = jest.spyOn(LazyComponent.prototype, 'updateLazyComponent');
+    const wrapper = mount(
+      <LazyComponent load={() => mockPromise} />
+    );
+    wrapper.instance().updateLazyComponent(require('./DummyComponent'));
+    expect(spy).toHaveBeenCalled();
     done();
   });
 });

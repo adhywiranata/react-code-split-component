@@ -11,10 +11,14 @@ export default (importingComponent, extraProps = {}) => {
 
     componentDidMount() {
       importingComponent.then((Comp) => {
-        const LoadedComponent = Comp.default;
-        this.setState({
-          LazyComponent: (<LoadedComponent {...this.props} {...extraProps} />),
-        });
+        this.updateLazyComponent(Comp);
+      });
+    }
+
+    updateLazyComponent(Comp) {
+      const LoadedComponent = Comp.default;
+      this.setState({
+        LazyComponent: (<LoadedComponent {...this.props} {...extraProps} />),
       });
     }
 
