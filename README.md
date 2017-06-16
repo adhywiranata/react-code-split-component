@@ -5,7 +5,7 @@
 [![dependencies Status](https://david-dm.org/adhywiranata/react-code-split-component/status.png)](https://david-dm.org/adhywiranata/react-code-split-component)
 [![devDependencies Status](https://david-dm.org/adhywiranata/react-code-split-component/dev-status.svg)](https://david-dm.org/adhywiranata/react-code-split-component?type=dev)
 [![Code Climate](https://codeclimate.com/github/adhywiranata/react-code-split-component/badges/gpa.svg)](https://codeclimate.com/github/adhywiranata/react-code-split-component)
-[![Coverage Status](https://coveralls.io/repos/github/adhywiranata/cra-webpack-code-splitting/badge.svg?branch=master)](https://coveralls.io/github/adhywiranata/cra-webpack-code-splitting?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/adhywiranata/react-code-split-component/badge.svg?branch=master)](https://coveralls.io/github/adhywiranata/react-code-split-component?branch=master)
 <!-- [![codecov](https://codecov.io/gh/adhywiranata/react-code-split-component/branch/master/graph/badge.svg)](https://codecov.io/gh/adhywiranata/react-code-split-component) -->
 
 ## Motivation 💪
