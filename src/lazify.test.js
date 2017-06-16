@@ -3,6 +3,7 @@ import {shallow, mount} from 'enzyme';
 import jsdom from 'jsdom';
 
 import lazify from './lazify';
+import mockPromise from './mockPromise';
 
 const doc = new jsdom.JSDOM('<!doctype html><html><body></body></html>');
 global.document = doc;
@@ -26,11 +27,6 @@ describe('lazify', () => {
   });
 
   it('successfully calls updateLazyComponent method without breaks', (done) => {
-    const mockPromise = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(require('./DummyComponent'));
-      }, 1);
-    });
     const LazyComponent = lazify(mockPromise);
     const spy = jest.spyOn(LazyComponent.prototype, 'updateLazyComponent');
     const wrapper = mount(<LazyComponent />);
@@ -40,11 +36,6 @@ describe('lazify', () => {
   });
 
   it('successfully calls updateLazyComponent on component did mount', (done) => {
-    const mockPromise = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(require('./DummyComponent'));
-      }, 1);
-    });
     const LazyComponent = lazify(mockPromise);
     const spy = jest.spyOn(LazyComponent.prototype, 'componentDidMount');
     const wrapper = mount(<LazyComponent />);
