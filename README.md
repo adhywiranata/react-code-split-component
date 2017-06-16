@@ -12,7 +12,7 @@
 
 __Code Splitting?__
 
-Split bundle codes and load module and dependencies on demand. Time to say goodbye to monolithic bundle file! 👋
+Split bundle codes and load module and dependencies on demand. Time to say goodbye to monolithic bundle file! 👋 👋
 
 ## Installation 👷
 **NPM**
