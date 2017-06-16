@@ -45,7 +45,17 @@ describe('<LazyComponent />', () => {
   });
 
   it('successfully calls updateLazyComponent on component did mount', (done) => {
-    const spy = jest.spyOn(LazyComponent.prototype, 'componentDidMount');
+    const spy = jest.spyOn(LazyComponent.prototype, 'updateLazyComponent');
+    const wrapper = mount(
+      <LazyComponent load={() => mockPromise} />
+    );
+    wrapper.instance().componentDidMount();
+    expect(spy).toHaveBeenCalled();
+    done();
+  });
+
+  it('successfully calls updateLazyComponent on component did mount', (done) => {
+    const spy = jest.spyOn(LazyComponent.prototype, 'updateLazyComponent');
     const wrapper = mount(
       <LazyComponent load={() => mockPromise} />
     );
