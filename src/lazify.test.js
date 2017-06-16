@@ -3,11 +3,20 @@ import {shallow, mount} from 'enzyme';
 import jsdom from 'jsdom';
 
 import lazify from './lazify';
-import mockPromise from './mockPromise';
 
 const doc = new jsdom.JSDOM('<!doctype html><html><body></body></html>');
 global.document = doc;
 global.window = doc.defaultView;
+
+const mockPromise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    if (typeof <DummyComponent /> === 'object') {
+      resolve(<DummyComponent />);
+    } else {
+      reject();
+    }
+  }, 1);
+});
 
 describe('lazify', () => {
   it('is a function', () => {

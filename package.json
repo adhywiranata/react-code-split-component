@@ -5,7 +5,9 @@
     "url": "https://github.com/adhywiranata/react-code-split-component"
   },
   "scripts": {
-    "test": "./node_modules/.bin/jest --runInBand --verbose",
+    "test": "./node_modules/.bin/jest src --runInBand --verbose",
+    "coverage": "./node_modules/.bin/jest src --coverage",
+    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "build": ".node_modules/.bin/webpack"
   },
   "dependencies": {
@@ -20,13 +22,13 @@
     "babel-jest": "^20.0.3",
     "babel-loader": "^7.0.0",
     "babel-preset-env": "^1.5.2",
-    "coveralls": "^2.13.1",
     "enzyme": "^2.8.2",
     "eslint": "^3.0.0",
     "eslint-config-airbnb": "^15.0.1",
     "eslint-plugin-import": "^2.3.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.0.1",
+    "istanbul": "^0.4.5",
     "jest": "^20.0.4",
     "jsdom": "^11.0.0",
     "react-test-renderer": "^15.5.4",
