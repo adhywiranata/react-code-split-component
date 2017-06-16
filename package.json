@@ -7,7 +7,7 @@
   "scripts": {
     "test": "./node_modules/.bin/jest src --runInBand --verbose",
     "coverage": "./node_modules/.bin/jest src --coverage",
-    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
+    "coveralls": "./node_modules/.bin/jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "build": ".node_modules/.bin/webpack"
   },
   "dependencies": {
@@ -22,6 +22,7 @@
     "babel-jest": "^20.0.3",
     "babel-loader": "^7.0.0",
     "babel-preset-env": "^1.5.2",
+    "coveralls": "^2.13.1",
     "enzyme": "^2.8.2",
     "eslint": "^3.0.0",
     "eslint-config-airbnb": "^15.0.1",
