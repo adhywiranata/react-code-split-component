@@ -1,6 +1,7 @@
 # React Code Split Component
 > Painless Code Splitting Component
 
+[![npm version](https://badge.fury.io/js/react-code-split-component.svg)](https://badge.fury.io/js/react-code-split-component)
 [![Build Status](https://travis-ci.org/adhywiranata/react-code-split-component.svg?branch=master)](https://travis-ci.org/adhywiranata/react-code-split-component)
 [![dependencies Status](https://david-dm.org/adhywiranata/react-code-split-component/status.png)](https://david-dm.org/adhywiranata/react-code-split-component)
 [![devDependencies Status](https://david-dm.org/adhywiranata/react-code-split-component/dev-status.svg)](https://david-dm.org/adhywiranata/react-code-split-component?type=dev)
