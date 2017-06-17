@@ -7,11 +7,20 @@
 [![Code Climate](https://codeclimate.com/github/adhywiranata/react-code-split-component/badges/gpa.svg)](https://codeclimate.com/github/adhywiranata/react-code-split-component)
 [![Coverage Status](https://coveralls.io/repos/github/adhywiranata/react-code-split-component/badge.svg?branch=master)](https://coveralls.io/github/adhywiranata/react-code-split-component?branch=master)
 
+Split bundle codes and load module and dependencies on demand. Time to say goodbye to monolithic bundle file! 👋
+
 ## Motivation 💪
 
-__Code Splitting?__
+### Code Splitting?__
 
-Split bundle codes and load module and dependencies on demand. Time to say goodbye to monolithic bundle file! 👋 👋
+__TL;DR__
+Code splitting allows us to split your code into various bundles (chunks) which we can then load on demand.
+
+### Where we need them?
+
+Code splitting helps us to only load codes and its specific dependencies when we're using routing or running several codes based on user events. Just load the specific page's dependencies asynchronously. __It helps you have a nice time to first paint when you're building PWApps!__
+
+For more information regarding code splitting, which is a term popularized by Webpack, visit the Webpack 2 documentation on [Code Splitting](https://webpack.js.org/guides/code-splitting-async/).
 
 ## Installation 👷
 **NPM**
@@ -111,13 +120,13 @@ export default () => (
 ```
 
 ## ESLint Issues ⚠️
-ESLint might shows warning when you're using ``import`` inside another react component if you use ``<LazyComponent />``.
+ESLint might shows warning when you're using ``import`` inside another react component if you use ``<LazyComponent />`` since it normally expect you to put every ``import`` statement on top of your file.
 
 ## EcmaScript Dynamic Import 🎵
 
 **not yet supported**
 
-Dynamic Import is currently in TC39 Proposal. When dynamic imports is officially supported, I'm sure to update this module to take advantage of the awesomeness of dynamic imports.
+[Dynamic Import](https://github.com/tc39/proposal-dynamic-import) is currently in TC39 Proposal. When dynamic imports is officially supported, I'm sure to update this module to take advantage of the awesomeness of dynamic imports.
 
 ## SSR Support 🔬
 
