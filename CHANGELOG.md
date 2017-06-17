@@ -1,6 +1,7 @@
 # Changelog
 
 ## 0.5.0 (16 June 2017)
+0.5.1 Fixed some issues in Jest promise testing
 0.5.0 Improved component and methods testability
 
 ## 0.4.0 (14 June 2017)

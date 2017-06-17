@@ -20,7 +20,7 @@ Code splitting allows us to split your code into various bundles (chunks) which 
 
 Code splitting helps us to only load codes and its specific dependencies when we're using routing or running several codes based on user events. Just load the specific page's dependencies asynchronously. __It helps you have a nice time to first paint when you're building PWApps!__
 
-For more information regarding code splitting, which is a term popularized by Webpack, visit the Webpack 2 documentation on [Code Splitting](https://webpack.js.org/guides/code-splitting-async/).
+For more information regarding code splitting, which is a term popularized by Webpack, visit Webpack 2 documentation on [Code Splitting](https://webpack.js.org/guides/code-splitting-async/).
 
 ## Installation 👷
 **NPM**
@@ -126,8 +126,12 @@ ESLint might shows warning when you're using ``import`` inside another react com
 
 **not yet supported**
 
-[Dynamic Import](https://github.com/tc39/proposal-dynamic-import) is currently in TC39 Proposal. When dynamic imports is officially supported, I'm sure to update this module to take advantage of the awesomeness of dynamic imports.
+[Dynamic Import](https://github.com/tc39/proposal-dynamic-import) is currently in TC39 Proposal. When dynamic imports is officially supported, this repo will get updated to take advantage of the awesomeness of dynamic imports.
 
 ## SSR Support 🔬
 
 **Server Side Rendering currently not supported**
+
+## Side Note ✨
+
+I Came up with this component since I've been manually code-splitting components and put them into lazy loaded components. Doing these things can quickly become painful and cumbersome, so a dedicated component will helps a lot. Please give feedback or let me know if you find some issues. Will be glad to hear some stories on how code-splitting helps you reduce initial bundle size and improve your app's first meaningful paint.
