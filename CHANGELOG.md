@@ -1,6 +1,7 @@
 # Changelog
 
 ## 0.6.0 (20 June 2017)
+0.6.2 add webpack loader to path outside of the module, targeting the project src
 0.6.1 added ``babel-plugin-syntax-dynamic-import`` module to webpack plugins
 0.6.0 Modify ``lazify`` to implement dynamic import
 
