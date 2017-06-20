@@ -10,7 +10,7 @@ export default (importingComponent, extraProps = {}) => {
     }
 
     componentDidMount() {
-      importingComponent.then((Comp) => {
+      import(importingComponent).then((Comp) => {
         this.updateLazyComponent(Comp);
       });
     }
