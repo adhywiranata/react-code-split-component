@@ -12,7 +12,10 @@ module.exports = {
     {
       test: /\.js$/,
       exclude: /(node_modules|bower_components)/,
-      include: path.join(__dirname, 'src'),
+      include: [
+        path.join(__dirname, 'src'),
+        '../../../src'
+      ],
       use: {
         loader: 'babel-loader',
         options: {
