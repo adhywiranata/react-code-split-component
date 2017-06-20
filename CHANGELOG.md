@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.6.0 (20 June 2017)
+0.6.0 Modify ``lazify`` to implement dynamic import
+
 ## 0.5.0 (17 June 2017)
 0.5.2 Removed some duplicate internal codes
 0.5.1 Fixed some issues in Jest promise testing
