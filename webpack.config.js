@@ -12,10 +12,12 @@ module.exports = {
     {
       test: /\.js$/,
       exclude: /(node_modules|bower_components)/,
+      include: path.join(__dirname, 'src'),
       use: {
         loader: 'babel-loader',
         options: {
-          presets: ['es2015', 'react']
+          presets: ['es2015', 'react'],
+          plugins: ['syntax-dynamic-import']
         }
       }
     }

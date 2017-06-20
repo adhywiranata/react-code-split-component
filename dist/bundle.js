@@ -4571,7 +4571,7 @@ exports.default = function (importingComponent) {
       value: function componentDidMount() {
         var _this2 = this;
 
-        importingComponent.then(function (Comp) {
+        __webpack_require__(38)(importingComponent).then(function (Comp) {
           _this2.updateLazyComponent(Comp);
         });
       }
@@ -4599,6 +4599,18 @@ exports.default = function (importingComponent) {
     return LazyComponent;
   }(_react2.default.Component);
 };
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports) {
+
+function webpackEmptyAsyncContext(req) {
+	return new Promise(function(resolve, reject) { reject(new Error("Cannot find module '" + req + "'.")); });
+}
+webpackEmptyAsyncContext.keys = function() { return []; };
+webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
+module.exports = webpackEmptyAsyncContext;
+webpackEmptyAsyncContext.id = 38;
 
 /***/ })
 /******/ ]);
