@@ -8,7 +8,7 @@
     "test": "./node_modules/.bin/jest src --runInBand --verbose",
     "coverage": "./node_modules/.bin/jest src --coverage",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "build": ".node_modules/.bin/webpack"
+    "build": "./node_modules/.bin/webpack"
   },
   "dependencies": {
     "babel-preset-es2015": "^6.24.1",
@@ -28,11 +28,11 @@
     "jest": "^20.0.4",
     "jsdom": "^11.0.0",
     "react-test-renderer": "^15.5.4",
-    "webpack": "^2.6.1"
+    "webpack": "3.0.0"
   },
   "jest": {
     "testEnvironment": "jsdom"
   },
   "version": "0.5.2",
-  "license" : "MIT"
+  "license": "MIT"
 }
