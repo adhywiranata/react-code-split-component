@@ -1,6 +1,7 @@
 # Changelog
 
 ## 0.6.0 (20 June 2017)
+0.6.1 added ``babel-plugin-syntax-dynamic-import`` module to webpack plugins
 0.6.0 Modify ``lazify`` to implement dynamic import
 
 ## 0.5.0 (17 June 2017)
